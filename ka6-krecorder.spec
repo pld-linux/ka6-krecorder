@@ -26,6 +26,7 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires(post,postun):	desktop-file-utils
 Requires:	Qt6Core >= %{qtver}
 Requires:	Qt6Gui >= %{qtver}
 Requires:	Qt6Widgets >= %{qtver}
@@ -63,6 +64,12 @@ rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_desktop_database_post
+
+%postun
+%update_desktop_database_postun
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
