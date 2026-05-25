@@ -5,7 +5,8 @@
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		krecorder
-Summary:	A convergent audio recording application for Plasma
+Summary:	An audio recording application
+Summary(pl.UTF-8):	Program do nagrywania dźwięku
 Name:		ka6-%{kaname}
 Version:	26.04.1
 Release:	1
@@ -35,7 +36,11 @@ Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A convergent audio recording application for Plasma.
+Recorder is a simple, cross-platform audio recording application.
+
+%description -l pl.UTF-8
+Recorder jest prostym, wieloplatformowym programem do nagrywania
+dźwięku.
 
 %prep
 %setup -q -n %{kaname}-%{version}
